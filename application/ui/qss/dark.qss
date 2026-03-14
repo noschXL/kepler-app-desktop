@@ -1,0 +1,52 @@
+QRadioButton::indicator {
+    width: 0px;
+    height: 0px;
+    image: none;
+    border: none;
+    background: transparent;
+}
+
+QRadioButton {
+    border-radius: 9px;
+    border-width: 5px;
+    border-color: @PRIMARY;
+    border-style: solid;
+    width: 50px;
+    height: 50px;
+    background-color: #FFfed4;
+    text-align: center;
+    font-size: 26px;
+}
+
+
+QRadioButton:checked {
+    background-color: #AFff7c00;
+}
+
+QRadioButton#Startseite {
+    image: url(ui/assets/minimal-jkg.png)
+}
+
+QRadioButton#Stundenplan {
+    image: url(ui/assets/phosphor/dark/calendar-blank.svg)
+}
+
+QRadioButton#Emails {
+    image: url(ui/assets/phosphor/dark/envelope.svg)
+}
+
+QRadioButton#Dateien {
+    image: url(ui/assets/phosphor/dark/folder.svg)
+}
+
+QRadioButton#Aufgaben {
+    image: url(ui/assets/phosphor/dark/check-square.svg)
+}
+
+QRadioButton#Messenger {
+    image: url(ui/assets/phosphor/dark/chats.svg)
+}
+
+QRadioButton#Essen {
+    image: url(ui/assets/phosphor/dark/fork-knife.png)
+}

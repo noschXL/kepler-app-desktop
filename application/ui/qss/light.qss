@@ -1,0 +1,39 @@
+QRadioButton::indicator {
+    width: 0px;
+    height: 0px;
+    image: none;
+    border: none;
+    background: transparent;
+}
+
+QRadioButton {
+    border-radius: 9px;
+    width: 50px;
+    height: 50px;
+    background-color: #FFfed4;
+    text-align: center;
+    background-color: #FFfed4;
+    font-size: 26px;
+}
+
+
+QRadioButton:checked {
+    background-color: #FF4a8a;
+}
+
+QRadioButton#Startseite {
+    image: url(ui/assets/minimal-jkg.png)
+}
+
+QRadioButton#Aufgaben {
+    padding-bottom: 8px;
+}
+
+QRadioButton#Messenger {
+    padding-right: 1px;
+}
+
+QRadioButton#Essen {
+    padding-right: 7px;
+    padding-bottom: 3px;
+}
