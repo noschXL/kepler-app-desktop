@@ -1,3 +1,7 @@
+* {
+    background-color: @bg_dark;
+}
+
 QRadioButton::indicator {
     width: 0px;
     height: 0px;
@@ -9,18 +13,23 @@ QRadioButton::indicator {
 QRadioButton {
     border-radius: 9px;
     border-width: 5px;
-    border-color: @PRIMARY;
+    border-color: @border_dark;
     border-style: solid;
     width: 50px;
     height: 50px;
-    background-color: #FFfed4;
+    background-color: @bg_dark;
     text-align: center;
     font-size: 26px;
 }
 
+QRadioButton:hover {
+    background-color: @orange_dark;
+    border-color: @orange;    
+}
 
 QRadioButton:checked {
-    background-color: #AFff7c00;
+    background-color: @blue_dark;
+    border-color: @blue;
 }
 
 QRadioButton#Startseite {
@@ -48,5 +57,5 @@ QRadioButton#Messenger {
 }
 
 QRadioButton#Essen {
-    image: url(ui/assets/phosphor/dark/fork-knife.png)
+    image: url(ui/assets/phosphor/dark/fork-knife.svg)
 }

@@ -28,6 +28,8 @@ class SidebarWidget(QtWidgets.QWidget):
 
         self.menubuttons[0].setChecked(True)
 
+    def _update_stack(self):
+        pass
 
         
 
