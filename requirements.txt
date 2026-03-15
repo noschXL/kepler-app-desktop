@@ -2,4 +2,4 @@ PySide6>=6.6.0
 aiohttp>=3.9.0
 darkdetect>=0.7.1
 PyQtDarkTheme-fork>=2.1.0
-pyinstaller>=6.0.0
+requests>=2.32.5

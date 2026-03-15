@@ -13,3 +13,6 @@ def send_rpc(method: str, params: dict[str,str]) -> dict[str,str]:
     response = requests.post(url, json=payload).json()
 
     return response
+
+if __name__ == "__main__":
+    print(send_rpc("get_nonce", {}))

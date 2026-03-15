@@ -12,6 +12,9 @@ class LoadingPage(QtWidgets.QWidget):
         font = QtGui.QFont()
         font.setPointSize(22)
         self.label.setFont(font)
+
+        self.label.setObjectName("loadingText")
+
         self.texts = ["loading.", "loading..", "loading..."]
         self.currenttext = 0
         layout.addWidget(self.label, alignment=QtCore.Qt.AlignCenter)

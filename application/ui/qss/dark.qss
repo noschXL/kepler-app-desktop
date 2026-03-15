@@ -59,3 +59,7 @@ QRadioButton#Messenger {
 QRadioButton#Essen {
     image: url(ui/assets/phosphor/dark/fork-knife.svg)
 }
+
+QLabel#loadingText {
+  color: @text_on_dark
+} 
