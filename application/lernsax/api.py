@@ -1,11 +1,15 @@
 from lernsax.jsonrpc import send_rpc
 import hashlib
+import requests
+
+from lernsax.apiconstants import *
 
 SALT = "ithinkthisisagoodenoughsalt"
 
 def login(username: str, password: str):
     """logs in a user and returns the session"""
-    nonce_response = send_rpc("get_nonce", {})
+    session = requests.Session()
+    nonce_response = send_rpc(session, "get_nonce", {})
 
     result = nonce_response.get("result")
     if type(result) == dict:
@@ -27,16 +31,30 @@ def login(username: str, password: str):
                 "password" : password,
             }
 
-            session = send_rpc("login", params)
+            
 
-            return session
+            response = send_rpc(session, "login", params)
+
+            print(response)
+
+            if type(response) == dict:
+                returnvalue = result.get("return")
+                if returnvalue == "OK":
+                    return session
+
+            raise ValueError("couldnt log in, wrong user/password")
         else:
-            raise ValueError("invalid response, return was not OK")
+            raise ConnectionError("invalid response, return was not OK")
         
-    raise ValueError("no response from lernsax.de/api.php, no connection?")
+    raise ConnectionError("no response from lernsax.de/api.php, no connection?")
 
+class LernsaxSession():
+    def __init__(self, username: str, password: str):
+        self._session_id = 0
+        self.session = login(username, password)
 
-if __name__ == "__main__":
-    user = input("username: ")
-    pas = input("pass: ")
-    print(login(user, pas))
+    def logout(self):
+        send_rpc(self.session, "logout", {})
+
+    def set_focus(self, obj):
+        send_rpc(self.session, "set_focus", {"object": obj})

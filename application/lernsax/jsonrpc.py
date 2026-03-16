@@ -2,7 +2,7 @@ import requests
 
 url = "https://www.lernsax.de/jsonrpc.php"
 
-def send_rpc(method: str, params: dict[str,str]) -> dict[str,str]:
+def send_rpc(session: requests.Session, method: str, params: dict[str,str]) -> dict[str,str]:
     payload = {
         "method" : method,
         "params" : params,
@@ -10,7 +10,7 @@ def send_rpc(method: str, params: dict[str,str]) -> dict[str,str]:
         "id" : "1",
     }
 
-    response = requests.post(url, json=payload).json()
+    response = session.post(url, json=payload).json()
 
     return response
 

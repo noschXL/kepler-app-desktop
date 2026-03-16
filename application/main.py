@@ -5,6 +5,7 @@ from util.styleloader import load_stylesheet
 from ui.theme import apply_colors
 
 from ui.gui import MainWidget
+from state import *
 
 from PySide6 import QtWidgets
 
@@ -24,4 +25,9 @@ if __name__ == "__main__":
     widget.show()
     widget.setWindowTitle("Kepler App")
 
-    sys.exit(app.exec())
+    app.exec()
+
+    for session in state.lernsaxSessions:
+        session.logout()
+
+    sys.exit()
